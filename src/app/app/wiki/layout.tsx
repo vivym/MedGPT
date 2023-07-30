@@ -44,7 +44,10 @@ export default function WikiLayout({
           <button
             type="button"
             className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            onClick={() => router.push(`/app/wiki/${query}`)}
+            onClick={(e) => {
+              router.push(`/app/wiki/${query}`)
+              e.preventDefault()
+            }}
           >
             搜索
           </button>

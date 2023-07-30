@@ -13,7 +13,10 @@ export default function VisPage() {
       <div className="fixed bottom-4 right-4 z-50">
         <button
           className="p-3 rounded-full bg-blue-500 text-white shadow-lg hover:bg-blue-600"
-          onClick={() => setsearchPaletteOpen(!searchPaletteOpen)}
+          onClick={(e) => {
+            setsearchPaletteOpen(!searchPaletteOpen)
+            e.preventDefault()
+          }}
         >
           <MagnifyingGlassIcon className="w-6 h-6" />
         </button>

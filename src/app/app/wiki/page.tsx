@@ -108,10 +108,13 @@ export default function WikiHomePage() {
     <div className="mx-4 mt-6">
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {items.map((item) => (
-          <div
+          <button
             key={item.id}
             className="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400 cursor-pointer"
-            onClick={() => router.push(`/app/wiki/${item.name}`)}
+            onClick={(e) => {
+              router.push(`/app/wiki/${item.name}`)
+              e.preventDefault()
+            }}
           >
             <span>{item.name}</span>
             <span className="absolute inset-y-0 right-0 flex items-center pr-4">
@@ -121,7 +124,7 @@ export default function WikiHomePage() {
               <span className="sr-only">sub-items</span>
               <ChevronRightIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
             </span>
-          </div>
+          </button>
         ))}
       </div>
     </div>
